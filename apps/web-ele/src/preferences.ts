@@ -1,7 +1,4 @@
-import {
-  appCopyrightPreferences,
-  defineOverridesPreferences,
-} from '@vben/preferences';
+import { defineOverridesPreferences } from '@vben/preferences';
 
 /**
  * @description 项目配置文件
@@ -10,8 +7,31 @@ import {
  */
 export const overridesPreferences = defineOverridesPreferences({
   // overrides
+  // 全局配置
   app: {
     name: import.meta.env.VITE_APP_TITLE,
+    accessMode: 'frontend',
+    enablePreferences: false,
   },
-  copyright: appCopyrightPreferences,
+  // 版权配置
+  copyright: {
+    // 版权是否可见
+    enable: false,
+  },
+  // 部件配置
+  widget: {
+    // 是否启用语言切换部件
+    languageToggle: false,
+    // 是否启用锁屏部件
+    lockScreen: false,
+    // 是否启用通知部件
+    notification: false,
+    // 是否启用主题切换部件
+    themeToggle: false,
+  },
+  // 主题配置
+  theme: {
+    // 当前主题
+    mode: 'light',
+  },
 });
